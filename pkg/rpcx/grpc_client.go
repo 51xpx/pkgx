@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/51xpx/pkgx/pkg/jaeger_trace"
 	"github.com/gin-gonic/gin"
 	grpc_middeware "github.com/grpc-ecosystem/go-grpc-middleware"
 	"github.com/opentracing/opentracing-go"
-	"github.com/51xpx/pkgx/pkg/jaeger_trace"
 	"google.golang.org/grpc"
 )
 
@@ -17,7 +17,6 @@ func NewGrpcClientConn(serviceAddress string, c *gin.Context) *grpc.ClientConn {
 	var conn *grpc.ClientConn
 	var err error
 	var jaegerTraceIsOpen int
-
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Millisecond*500)
 	defer cancel()

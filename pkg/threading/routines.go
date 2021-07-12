@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"github.com/seosite/gcore/pkg/core/rescue"
+	"github.com/51xpx/pkgx/pkg/rescue"
 )
 
 func GoSafe(fn func()) {
